@@ -25,7 +25,7 @@ npm install
 npm run dev
 ```
 
-接続先: `http://localhost:3000`
+接続先: `http://localhost:3000/facial-kinetic-sync`
 ※ 初回起動時、監視カメラへのアクセス権限譲渡が要求される。実験遂行のためこれを承認すること。
 
 **4. 監視パラメータ**

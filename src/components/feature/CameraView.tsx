@@ -152,13 +152,21 @@ const CameraView: React.FC = () => {
                             } else if (squatStateRef.current === 'DOWN') {
                                 if (currentKneeAngle > 160) {
                                     squatStateRef.current = 'UP';
-                                    squatCountRef.current += 1;
+                                    if (isSmiling) {
+                                        squatCountRef.current += 1;
+                                    }
                                 }
                             }
                         }
 
                         // Clear and Draw
                         ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                        // Save context to apply mirror effect only for landmarks
+                        ctx.save();
+                        ctx.scale(-1, 1);
+                        ctx.translate(-canvas.width, 0);
+
                         const drawingUtils = new DrawingUtils(ctx);
 
                         // Draw Pose
@@ -185,6 +193,9 @@ const CameraView: React.FC = () => {
                                 });
                             }
                         }
+
+                        // Restore context to normal for text rendering
+                        ctx.restore();
 
                         // UI Overlay
                         ctx.fillStyle = "white";
@@ -282,7 +293,7 @@ const CameraView: React.FC = () => {
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
-                    transform: "scaleX(-1)", // Mirror to match video
+                    // transform: "scaleX(-1)", // Removed CSS mirror
                     pointerEvents: "none"
                 }}
             />

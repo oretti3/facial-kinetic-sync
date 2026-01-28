@@ -1,0 +1,19 @@
+{
+  "name": "Smile Squat Dev",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+  "runArgs": [
+    "--dns=8.8.8.8",
+    "--dns=8.8.4.4"
+  ],
+  "forwardPorts": [3000],
+  "customizations": {
+    "vscode": {
+      "settings": {},
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "remoteUser": "node"
+}

@@ -47,7 +47,7 @@ Face Mesh モデルにより顔面の形状係数を解析する。
 *   **身体的影響**: 長時間のセッションにより被験者に重篤な筋肉疲労、または表情筋の痙攣が発生した場合でも、システム側での停止措置は行われない。各個人の判断で終了すること。
 
 **6. 技術詳細**
-*   **Core**: Next.js 15
+*   **Core**: Next.js 16
 *   **Vision Engine**: MediaPipe Tasks Vision
 *   **Language**: TypeScript
 
